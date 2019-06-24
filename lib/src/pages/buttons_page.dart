@@ -166,31 +166,35 @@ class ButtonsPage extends StatelessWidget {
 
   Widget _createRoundedButton ( Color color, IconData icon, String text) {
 
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur( sigmaX: 5.0, sigmaY: 5.0),
-        child: Container (
-          height: 180.0,
-          margin: EdgeInsets.all(15.0),
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(62, 66, 107, 0.7),
-            borderRadius: BorderRadius.circular(20.0)
-          ),
-          child: Column (
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              SizedBox(height: 5.0,),
-              CircleAvatar(
-                radius: 35.0,
-                backgroundColor: color,
-                child: Icon ( icon, color: Colors.white, size: 30.0,),
-              ),
-              Text ( text, style: TextStyle(color: color ), ),
-              SizedBox(height: 5.0,)
+    return Padding(
+      padding: EdgeInsets.all(15.0),
+      child: ClipRect(
+        //borderRadius: BorderRadius.circular(20.0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0),
+          child: Container (
+            height: 180.0,
+            //margin: EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(62, 66, 107, 0.7),
+              borderRadius: BorderRadius.circular(20.0)
+            ),
+            child: Column (
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                SizedBox(height: 5.0,),
+                CircleAvatar(
+                  radius: 35.0,
+                  backgroundColor: color,
+                  child: Icon ( icon, color: Colors.white, size: 30.0,),
+                ),
+                Text ( text, style: TextStyle(color: color ), ),
+                SizedBox(height: 5.0,)
 
-            ],
-          ),
+              ],
+            ),
 
+          ),
         ),
       ),
     );
